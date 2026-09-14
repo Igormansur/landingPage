@@ -1,0 +1,808 @@
+/* =========================================
+   RESET E BASE
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+}
+
+input {
+  background: none;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+input::placeholder {
+  color: #6b6b6b;
+}
+
+/* =========================================
+   ESTRUTURA GERAL DA PÁGINA
+========================================= */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* =========================================
+   LOGOTIPO (compartilhado entre cabeçalho e rodapé)
+========================================= */
+.logotipo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logotipo__icone {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: #3ecf3e;
+  font-size: 1.3rem;
+}
+
+.logotipo__texto {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.logotipo__texto strong {
+  font-weight: 700;
+  color: #3ecf3e;
+}
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+.cabecalho {
+  border-bottom: 1px solid #232323;
+  position: sticky;
+  top: 0;
+  background-color: #0a0a0a;
+  z-index: 100;
+}
+
+.cabecalho__conteudo {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  font-family: 'Inter', sans-serif;
+}
+
+.menu-navegacao {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.menu-navegacao__link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 6px;
+}
+
+.menu-navegacao__link:hover {
+  color: #3ecf3e;
+}
+
+.menu-navegacao__link--ativo {
+  color: #3ecf3e;
+}
+
+.menu-navegacao__link--ativo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: #3ecf3e;
+}
+
+.cabecalho__botao-cta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: end;
+  background-color: #3ecf3e;
+  color: #06210a;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 11px 18px;
+  border-radius: 8px;
+}
+
+.cabecalho__botao-cta:hover {
+  background-color: #4ade4a;
+}
+
+/* =========================================
+   PRINCIPAL
+========================================= */
+.principal {
+  display: grid;
+  row-gap: 40px;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 40px;
+  width: 100%;
+}
+
+/* =========================================
+   BANNER PRINCIPAL
+========================================= */
+.banner-principal {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 60px;
+  align-items: center;
+  padding: 100px 0 40px;
+}
+
+.banner-principal__selo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  border: 1px solid #232323;
+  background-color: #131313;
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #a3a3a3;
+  margin-bottom: 22px;
+}
+
+.banner-principal__selo-ponto {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #3ecf3e;
+}
+
+.banner-principal__titulo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.banner-principal__titulo--destaque {
+  color: #3ecf3e;
+}
+
+.banner-principal__descricao {
+  color: #a3a3a3;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+
+.banner-principal__botao {
+  display: inline-block;
+  background-color: #3ecf3e;
+  color: #06210a;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 13px 26px;
+  border-radius: 8px;
+}
+
+.banner-principal__botao:hover {
+  background-color: #4ade4a;
+}
+
+.banner-principal__imagem-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.banner-principal__imagem {
+  width: 600px;
+  height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #131313;
+  border: 1px solid #232323;
+}
+
+.banner-principal__imagem-el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.banner-principal__cartao-flutuante {
+  position: absolute;
+  left: -24px;
+  bottom: -22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #131313;
+  border: 1px solid #232323;
+  border-radius: 12px;
+  padding: 14px 18px;
+}
+
+.banner-principal__cartao-icone {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #3ecf3e;
+  border: 1px solid #3ecf3e;
+  border-radius: 50%;
+  background-color: #0e1f0e;
+}
+
+.banner-principal__cartao-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.banner-principal__cartao-texto strong {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.banner-principal__cartao-texto span {
+  font-size: 0.72rem;
+  color: #a3a3a3;
+}
+
+/* =========================================
+   EMPRESAS PARCEIRAS
+========================================= */
+.secao-empresas-parceiras {
+  padding: 60px 0 70px;
+  border-top: 1px solid #232323;
+  border-bottom: 1px solid #232323;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+  text-align: center;
+}
+
+.empresas-parceiras__eyebrow {
+  color: #3ecf3e;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.empresas-parceiras__titulo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.empresas-parceiras__subtitulo {
+  color: #a3a3a3;
+  font-size: 0.85rem;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+.empresas-parceiras__lista {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+  color: #a3a3a3;
+}
+
+.empresas-parceiras__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empresas-parceiras__logo:hover {
+  color: #3ecf3e;
+}
+
+.logoimg {
+  width: 75px;
+  height: 70px;
+}
+
+/* =========================================
+   PRINCIPAIS SERVIÇOS
+========================================= */
+.secao-servicos {
+  padding: 40px 0 80px;
+  display: grid;
+  justify-items: center;
+  gap: 36px;
+}
+
+.secao-servicos__titulo {
+  color: #3ecf3e;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.servicos__grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  width: 100%;
+  max-width: 960px;
+}
+
+.servico-card {
+  background-color: #0a0a0a;
+  border: 1px solid #3ecf3e;
+  border-radius: 12px;
+  padding: 30px 24px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.servico-card:hover {
+  background-color: #131313;
+}
+
+.servico-card__icone {
+  color: #3ecf3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.servico-card__titulo {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.servico-card__descricao {
+  font-size: 0.8rem;
+  color: #a3a3a3;
+  line-height: 1.5;
+}
+
+/* =========================================
+   VISIBILIDADE / ESTATÍSTICAS
+========================================= */
+.secao-visibilidade {
+  padding: 40px 0 90px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.visibilidade__texto h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.visibilidade__destaque {
+  color: #3ecf3e;
+}
+
+.visibilidade__texto p {
+  color: #a3a3a3;
+  font-size: 0.85rem;
+}
+
+.visibilidade__estatisticas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+}
+
+.estatistica-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+}
+
+.estatistica-item__icone {
+  color: #3ecf3e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.estatistica-item__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.estatistica-item__numero {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.estatistica-item__legenda {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+}
+
+/* =========================================
+   FAIXA DE CHAMADA FINAL
+========================================= */
+.faixa-cta {
+  background-color: #131313;
+  border: 1px solid #232323;
+  border-radius: 16px;
+  padding: 56px 40px;
+  margin-bottom: 90px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 22px;
+}
+
+.faixa-cta__titulo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  max-width: 640px;
+  line-height: 1.4;
+}
+
+.faixa-cta__titulo--destaque {
+  color: #3ecf3e;
+}
+
+.faixa-cta__botao {
+  background-color: #3ecf3e;
+  color: #06210a;
+  font-weight: 600;
+  font-size: 0.88rem;
+  padding: 13px 28px;
+  border-radius: 8px;
+}
+
+.faixa-cta__botao:hover {
+  background-color: #4ade4a;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+.rodape {
+  background-color: #131313;
+  border-top: 1px solid #232323;
+  padding: 56px 40px;
+}
+
+.rodape__grade {
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.rodape__marca {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.rodape__marca-texto {
+  font-size: 0.78rem;
+  color: #a3a3a3;
+  line-height: 1.6;
+}
+
+.rodape__redes-sociais {
+  display: flex;
+  gap: 10px;
+}
+
+.rede-social__botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #232323;
+  color: #ffffff;
+}
+
+.rede-social__botao:hover {
+  color: #0a0a0a;
+  background-color: #3ecf3e;
+  border-color: #3ecf3e;
+}
+
+.rodape__coluna {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+}
+
+.rodape__titulo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.rodape__lista-links {
+  display: grid;
+  gap: 12px;
+}
+
+.rodape__link {
+  color: #a3a3a3;
+  font-size: 0.8rem;
+}
+
+.rodape__link:hover {
+  color: #3ecf3e;
+}
+
+.rodape__newsletter {
+  display: flex;
+  align-items: center;
+  border: 1px solid #232323;
+  border-radius: 8px;
+  padding: 4px 4px 4px 14px;
+  gap: 8px;
+}
+
+.rodape__newsletter-input {
+  font-size: 0.78rem;
+}
+
+.rodape__newsletter-botao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #3ecf3e;
+  color: #06210a;
+  border-radius: 6px;
+}
+
+.rodape__newsletter-botao:hover {
+  background-color: #4ade4a;
+}
+
+
+.botao-tema {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #232323;
+  background-color: #131313;
+  color: #ffffff;
+  font-size: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.3s;
+}
+
+.botao-tema:hover {
+  background-color: #3ecf3e;
+  border-color: #3ecf3e;
+  transform: rotate(15deg);
+}
+
+
+/* =========================
+   MODO CLARO
+========================= */
+
+body.modo-claro {
+  background-color: #f5f5f5;
+  color: #111111;
+}
+
+body.modo-claro .cabecalho {
+  background-color: #ffffff;
+  border-color: #dddddd;
+}
+
+body.modo-claro .logotipo__texto {
+  color: #111111;
+}
+
+body.modo-claro .menu-navegacao__link {
+  color: #111111;
+}
+
+body.modo-claro .menu-navegacao__link:hover,
+body.modo-claro .menu-navegacao__link--ativo {
+  color: #3ecf3e;
+}
+
+body.modo-claro .banner-principal__selo {
+  background-color: #ffffff;
+  border-color: #dddddd;
+  color: #666666;
+}
+
+body.modo-claro .banner-principal__descricao {
+  color: #666666;
+}
+
+body.modo-claro .banner-principal__imagem {
+  background-color: #ffffff;
+  border-color: #dddddd;
+}
+
+body.modo-claro .banner-principal__cartao-flutuante {
+  background-color: #ffffff;
+  border-color: #dddddd;
+}
+
+body.modo-claro .banner-principal__cartao-texto span {
+  color: #666666;
+}
+
+body.modo-claro .secao-empresas-parceiras {
+  border-color: #dddddd;
+}
+
+body.modo-claro .empresas-parceiras__titulo {
+  color: #111111;
+}
+
+body.modo-claro .empresas-parceiras__subtitulo {
+  color: #666666;
+}
+
+body.modo-claro .servico-card {
+  background-color: #ffffff;
+}
+
+body.modo-claro .servico-card:hover {
+  background-color: #eeeeee;
+}
+
+body.modo-claro .servico-card__descricao {
+  color: #666666;
+}
+
+body.modo-claro .visibilidade__texto p,
+body.modo-claro .estatistica-item__legenda {
+  color: #666666;
+}
+
+body.modo-claro .faixa-cta {
+  background-color: #ffffff;
+  border-color: #dddddd;
+}
+
+body.modo-claro .rodape {
+  background-color: #eeeeee;
+  border-color: #dddddd;
+}
+
+body.modo-claro .rodape .logotipo__texto {
+  color: #111111;
+}
+
+body.modo-claro .rodape__marca-texto,
+body.modo-claro .rodape__link {
+  color: #666666;
+}
+
+body.modo-claro .rede-social__botao {
+  color: #111111;
+  border-color: #cccccc;
+}
+
+body.modo-claro .rodape__newsletter {
+  border-color: #cccccc;
+}
+
+body.modo-claro input {
+  color: #111111;
+}
+
+body.modo-claro .botao-tema {
+  background-color: #ffffff;
+  border-color: #dddddd;
+  color: #111111;
+}
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+@media (max-width: 1024px) {
+  .banner-principal {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+  .banner-principal__descricao {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .banner-principal__imagem-wrapper {
+    max-width: 380px;
+  }
+  .secao-visibilidade {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .visibilidade__estatisticas {
+    justify-content: center;
+  }
+  .estatistica-item {
+    justify-items: center;
+    text-align: left;
+  }
+  .rodape__grade {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .menu-navegacao {
+    display: none;
+  }
+  .servicos__grade {
+    grid-template-columns: 1fr;
+  }
+  .empresas-parceiras__lista {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+  }
+  .visibilidade__estatisticas {
+    grid-template-columns: 1fr;
+  }
+  .rodape__grade {
+    grid-template-columns: 1fr;
+  }
+}
